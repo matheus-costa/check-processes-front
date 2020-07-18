@@ -1,0 +1,115 @@
+<div nz-row [nzGutter]="24" class="header-page">
+
+    <div nz-col [nzSpan]="18">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>
+          Home
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+          <a>Processos</a>
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+          Cadastro
+        </nz-breadcrumb-item>
+      </nz-breadcrumb>
+    </div>
+  
+    <div nz-col [nzSpan]="6" class="text-right">
+      <button nz-button nzType="default" nzShape="round" routerLink="/process">
+        <i nz-icon nzType="arrow-left" nzTheme="outline"></i>Listagem
+      </button>
+    </div>
+  
+  </div>
+  <br>
+  
+  <form nz-form [formGroup]="processForm" class="login-form">
+    <div nz-row [nzGutter]="24">
+  
+      <div nz-col [nzSpan]="6">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor informe o código!">
+            <nz-form-label nzRequired nzFor="code">Código</nz-form-label>
+            <input type="text" nz-input formControlName="code" placeholder="Ex: 50622.000638/2018-39" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col [nzSpan]="8">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor informe o tipo!">
+            <nz-form-label nzRequired nzFor="tipo">Tipo</nz-form-label>
+            <input type="text" nz-input formControlName="type" placeholder="Ex: Manutenção e Restauração de Obras Rodoviárias: Assuntos Diversos" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+  
+      <div nz-col [nzSpan]="6">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor selecione o status!">
+            <nz-form-label nzRequired nzFor="status">Status</nz-form-label>
+  
+            <nz-select nzAllowClear nzPlaceHolder="Selecione..." formControlName="status">
+              <nz-option nzValue="OPEN" nzLabel="EM ABERTO"></nz-option>
+              <nz-option nzValue="PAUSED" nzLabel="PAUSADO"></nz-option>
+              <nz-option nzValue="CLOSED" nzLabel="CONCLUIDO"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col [nzSpan]="4">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor informe a data de registro!">
+            <nz-form-label nzRequired nzFor="registerDate">Data de Registro</nz-form-label>
+            <nz-date-picker formControlName="registerDate" nzFormat="dd/MM/yyyy"></nz-date-picker>
+            <!-- <input type="text" nz-input formControlName="registerDate" placeholder="Ex: 05/03/2018" /> -->
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+  
+    </div>
+  
+    <div nz-row [nzGutter]="24">
+      <div nz-col [nzSpan]="11">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor informe os Interessados!">
+            <nz-form-label nzRequired nzFor="interested">Interessados</nz-form-label>
+            <input type="text" nz-input formControlName="interested" placeholder="Ex: Superintendência Regional do DNIT no estado de Rondônia" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col [nzSpan]="11">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor informe a URL de consulta!">
+            <nz-form-label nzRequired nzFor="urlQuery">URL Consulta</nz-form-label>
+            <input type="text" nz-input formControlName="urlQuery" placeholder="Ex: https://sei.dnit.gov.br/sei/modulos/pesquisa/md_pesq_processo_exibir.php?PZI69t_Z_hj3AifdlTrE4iTpBcSuICOmNN150aCRiIlX3c-BEmh9gzEC8gKvkzpdxz5WncELtJoM98tHLPT2NeoT0e1q6EApiMdSdWWeOM39Aup13S95t_C1Hqh-yKnf" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col [nzSpan]="2">
+        <nz-form-item>
+          <nz-form-control>
+            <nz-form-label nzFor="lastDocument">Último Doc</nz-form-label>
+            <input type="text" nz-input formControlName="lastDocument" placeholder="Ex: 221" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  
+    <div nz-row [nzGutter]="24">
+      <div nz-col [nzSpan]="18">
+        <i>Campos com * são obrigatórios</i><br>
+      </div>
+      <div nz-col [nzSpan]="6" class="text-right">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Por favor informe a unidade de medida!">
+            <span></span>
+            <button (click)="save()" [disabled]="processForm.invalid" nz-button nzType="primary">Salvar Processo</button>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  
+  </form>
+  

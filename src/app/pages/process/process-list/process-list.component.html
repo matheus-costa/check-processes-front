@@ -1,0 +1,47 @@
+<div nz-row [nzGutter]="24" class="header-page">
+
+	<div nz-col [nzSpan]="18">
+		<nz-breadcrumb>
+			<nz-breadcrumb-item>
+				<a>Home</a>
+			</nz-breadcrumb-item>
+			<nz-breadcrumb-item>
+				Processos
+			</nz-breadcrumb-item>
+		</nz-breadcrumb>
+  </div>
+  
+  <div nz-col [nzSpan]="6" class="text-right">
+    <button nz-button nzType="primary" nzShape="round" routerLink="/process/new">
+      <i nz-icon nzType="plus" nzTheme="outline"></i>Novo
+    </button>
+  </div>
+
+</div>
+<br>
+
+
+<nz-table #basicTable [nzData]="listProcesses">
+    <thead>
+      <tr>
+        <th>Cód.</th>
+        <th>Tipo</th>
+        <th>Iteressados</th>
+        <th>Data Registro</th>
+        <th>Última Consulta</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let process of basicTable.data">
+          <td>{{ process.code }}</td>
+          <td>{{ process.type }}</td>
+          <td>{{ process.interested }}</td>
+          <td>{{ process.registerDate | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ process.lastQuery | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ processStatusBr[process.status] }}</td>
+          <td><a routerLink="/process/edit/{{ process.id }}"><i nz-icon nzType="edit" nzTheme="outline"></i></a></td>
+      </tr>
+    </tbody>
+  </nz-table>
