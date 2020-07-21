@@ -1,6 +1,6 @@
 <div nz-row [nzGutter]="24" class="header-page">
 
-    <div nz-col [nzSpan]="18">
+    <div nz-col nzXs="24" nzMd="18">
       <nz-breadcrumb>
         <nz-breadcrumb-item>
           Home
@@ -14,7 +14,7 @@
       </nz-breadcrumb>
     </div>
   
-    <div nz-col [nzSpan]="6" class="text-right">
+    <div nz-col nzXs="24" nzMd="6" class="text-right back">
       <button nz-button nzType="default" nzShape="round" routerLink="/process">
         <i nz-icon nzType="arrow-left" nzTheme="outline"></i>Listagem
       </button>
@@ -26,7 +26,7 @@
   <form nz-form [formGroup]="processForm" class="login-form">
     <div nz-row [nzGutter]="24">
   
-      <div nz-col [nzSpan]="6">
+      <div nz-col nzXs="24" nzMd="6">
         <nz-form-item>
           <nz-form-control nzErrorTip="Por favor informe o código!">
             <nz-form-label nzRequired nzFor="code">Código</nz-form-label>
@@ -35,7 +35,7 @@
         </nz-form-item>
       </div>
 
-      <div nz-col [nzSpan]="8">
+      <div nz-col nzXs="24" nzMd="8">
         <nz-form-item>
           <nz-form-control nzErrorTip="Por favor informe o tipo!">
             <nz-form-label nzRequired nzFor="tipo">Tipo</nz-form-label>
@@ -44,7 +44,7 @@
         </nz-form-item>
       </div>
   
-      <div nz-col [nzSpan]="6">
+      <div nz-col nzXs="24" nzMd="6">
         <nz-form-item>
           <nz-form-control nzErrorTip="Por favor selecione o status!">
             <nz-form-label nzRequired nzFor="status">Status</nz-form-label>
@@ -58,7 +58,7 @@
         </nz-form-item>
       </div>
 
-      <div nz-col [nzSpan]="4">
+      <div nz-col nzXs="24" nzMd="4">
         <nz-form-item>
           <nz-form-control nzErrorTip="Por favor informe a data de registro!">
             <nz-form-label nzRequired nzFor="registerDate">Data de Registro</nz-form-label>
@@ -71,7 +71,7 @@
     </div>
   
     <div nz-row [nzGutter]="24">
-      <div nz-col [nzSpan]="11">
+      <div nz-col nzXs="24" nzMd="11">
         <nz-form-item>
           <nz-form-control nzErrorTip="Por favor informe os Interessados!">
             <nz-form-label nzRequired nzFor="interested">Interessados</nz-form-label>
@@ -79,7 +79,7 @@
           </nz-form-control>
         </nz-form-item>
       </div>
-      <div nz-col [nzSpan]="11">
+      <div nz-col nzXs="24" nzMd="11">
         <nz-form-item>
           <nz-form-control nzErrorTip="Por favor informe a URL de consulta!">
             <nz-form-label nzRequired nzFor="urlQuery">URL Consulta</nz-form-label>
@@ -87,7 +87,7 @@
           </nz-form-control>
         </nz-form-item>
       </div>
-      <div nz-col [nzSpan]="2">
+      <div nz-col nzXs="24" nzMd="2">
         <nz-form-item>
           <nz-form-control>
             <nz-form-label nzFor="lastDocument">Último Doc</nz-form-label>
@@ -98,10 +98,10 @@
     </div>
   
     <div nz-row [nzGutter]="24">
-      <div nz-col [nzSpan]="18">
+      <div nz-col nzXs="0" nzMd="18">
         <i>Campos com * são obrigatórios</i><br>
       </div>
-      <div nz-col [nzSpan]="6" class="text-right">
+      <div nz-col nzXs="24" nzMd="6" class="text-right">
         <nz-form-item>
           <nz-form-control nzErrorTip="Por favor informe a unidade de medida!">
             <span></span>

@@ -11,12 +11,19 @@ export class ProcessListComponent implements OnInit {
   listProcesses: Process[];
   processStatusBr = {'OPEN': 'EM ABERTO', 'PAUSED': 'PAUSADO', 'CLOSED': 'CONCLUIDO'};
   constructor(
-    private processService: ProcessService
+    private processService: ProcessService,
   ) { }
 
   ngOnInit(): void {
     this.processService.list().subscribe(processes => {
       this.listProcesses = processes;
+    });
+  }
+
+  delete(processId: number) {
+    this.processService.delete(processId).subscribe( (success) => {
+        console.log(success);
+        window.location.reload();
     });
   }
 

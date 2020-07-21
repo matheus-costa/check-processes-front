@@ -71,6 +71,11 @@ nz-header {
 
 nz-content {
   margin: 24px;
+  .inner-content{
+    width: 100%;
+    float: left;
+    height: auto;
+  }
 }
 
 .inner-content {

@@ -2,3 +2,9 @@ nz-date-picker ::ng-deep{
     float: left;
     width: 100%;
 }
+
+@media (max-width: 768px){
+    .back{
+        padding-top: 20px !important;
+    }
+}

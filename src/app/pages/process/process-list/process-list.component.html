@@ -1,6 +1,6 @@
 <div nz-row [nzGutter]="24" class="header-page">
 
-	<div nz-col [nzSpan]="18">
+	<div nz-col nzXs="24" nzMd="18">
 		<nz-breadcrumb>
 			<nz-breadcrumb-item>
 				<a>Home</a>
@@ -11,7 +11,7 @@
 		</nz-breadcrumb>
   </div>
   
-  <div nz-col [nzSpan]="6" class="text-right">
+  <div nz-col nzXs="24" nzMd="6" class="text-right new">
     <button nz-button nzType="primary" nzShape="round" routerLink="/process/new">
       <i nz-icon nzType="plus" nzTheme="outline"></i>Novo
     </button>
@@ -25,23 +25,26 @@
     <thead>
       <tr>
         <th>Cód.</th>
-        <th>Tipo</th>
-        <th>Iteressados</th>
-        <th>Data Registro</th>
-        <th>Última Consulta</th>
-        <th>Status</th>
+        <th class="no-responsive">Tipo</th>
+        <th class="no-responsive">Iteressados</th>
+        <th class="no-responsive">Data Registro</th>
+        <th class="no-responsive">Última Consulta</th>
+        <th class="no-responsive">Status</th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let process of basicTable.data">
           <td>{{ process.code }}</td>
-          <td>{{ process.type }}</td>
-          <td>{{ process.interested }}</td>
-          <td>{{ process.registerDate | date: 'dd/MM/yyyy' }}</td>
-          <td>{{ process.lastQuery | date: 'dd/MM/yyyy HH:mm' }}</td>
-          <td>{{ processStatusBr[process.status] }}</td>
-          <td><a routerLink="/process/edit/{{ process.id }}"><i nz-icon nzType="edit" nzTheme="outline"></i></a></td>
+          <td class="no-responsive">{{ process.type }}</td>
+          <td class="no-responsive">{{ process.interested }}</td>
+          <td class="no-responsive">{{ process.registerDate | date: 'dd/MM/yyyy' }}</td>
+          <td class="no-responsive">{{ process.lastQuery | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td class="no-responsive">{{ processStatusBr[process.status] }}</td>
+          <td>
+            <a routerLink="/process/edit/{{ process.id }}"><i nz-icon nzType="edit" nzTheme="outline"></i></a>
+            <a class="del" (click)="delete(process.id)"><i nz-icon nzType="delete" nzTheme="outline"></i></a>
+          </td>
       </tr>
     </tbody>
   </nz-table>

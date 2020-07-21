@@ -20,4 +20,8 @@ export class ProcessService {
     save(process: Process) {
         return this.http.post<Process>(`${ENV.API_URL}/process/save`, process);
     }
+
+    delete(id: number) {
+        return this.http.delete(`${ENV.API_URL}/process/${id}`);
+    }
 }
