@@ -1,0 +1,23 @@
+a{
+    margin-right: 8px;
+    i{
+        font-size: 18px;
+    }
+
+    &.del{
+        color: #ff1952;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px){
+    .new{
+        padding-top: 20px;
+    }
+    .no-responsive{
+        display: none;
+    }
+    i{
+        font-size: 22px !important;
+    }
+}

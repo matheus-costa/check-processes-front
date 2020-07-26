@@ -1,1 +1,44 @@
-<p>user-list works!</p>
+<div nz-row [nzGutter]="24" class="header-page">
+
+	<div nz-col nzXs="24" nzMd="18">
+		<nz-breadcrumb>
+			<nz-breadcrumb-item>
+				<a>Home</a>
+			</nz-breadcrumb-item>
+			<nz-breadcrumb-item>
+				Usuário
+			</nz-breadcrumb-item>
+		</nz-breadcrumb>
+  </div>
+  
+  <div nz-col nzXs="24" nzMd="6" class="text-right new">
+    <button nz-button nzType="primary" nzShape="round" routerLink="/user/new">
+      <i nz-icon nzType="plus" nzTheme="outline"></i>Novo
+    </button>
+  </div>
+
+</div>
+<br>
+
+
+<nz-table #basicTable [nzData]="listUsers">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th class="no-responsive">Nome</th>
+        <th class="no-responsive">E-mail</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of basicTable.data">
+          <td>#{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td class="no-responsive">{{ user.email }}</td>
+          <td>
+            <a routerLink="/user/edit/{{ user.id }}"><i nz-icon nzType="edit" nzTheme="outline"></i></a>
+            <a class="del" (click)="delete(user.id)"><i nz-icon nzType="delete" nzTheme="outline"></i></a>
+          </td>
+      </tr>
+    </tbody>
+  </nz-table>
