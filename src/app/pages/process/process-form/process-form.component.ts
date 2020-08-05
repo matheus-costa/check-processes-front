@@ -41,12 +41,20 @@ export class ProcessFormComponent implements OnInit {
   save() {
     let process: Process = this.processForm.value;
     process.registerDate = new Date(process.registerDate);
+    process.code = process.code.replace(/ /g, "");
+    
     this.processService.save(process).subscribe((process) => {
       this.router.navigateByUrl('/process');
       this.notification.create(
         'success',
         'EBA! Tudo certo',
         'O Processo foi salvo com sucesso.'
+      );
+    }, (error) => {
+      this.notification.create(
+        'error',
+        'OPS! Algo deu errado',
+        'Infelizmente o Processo não pode ser salvo.'
       );
     });
   }
