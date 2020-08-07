@@ -29,7 +29,7 @@ export class ProcessFormComponent implements OnInit {
       registerDate: [null, [Validators.required]],
       urlQuery: [null, [Validators.required]],
       status: [null, [Validators.required]],
-      lastDocument: [null, []],
+      lastDocument: [null, [Validators.required]],
     });
 
     const processId = this.activatedRoute.snapshot.paramMap.get('id');
